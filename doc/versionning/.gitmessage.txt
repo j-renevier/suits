@@ -1,0 +1,32 @@
+# <type>(<portée>): <sujet>  (try to keep under 50 characters)
+
+# <description>
+
+# <footer>
+
+# ⚠️ Utilise WIP et je te maudit toi et ta famille
+# Type, le type de commit:
+#   build, ci, docs, feat, fix, perf, refactor, style, test
+
+# Portée, la partie du code affecté par les changements
+
+# Sujet, description succinte des changements:
+#   - Impératif présent
+#   - Minuscule
+#   - Pas de "." à la fin de la Description
+
+# Description, détail plus en profondeur les motivations derrière le changement.
+
+# Footer, références à des issues GitHub / GitLab ou autre.
+# Commit de fin d'issue
+# close #<n° de l'issue
+
+[Ticket: X]
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+# modified:   lib/test.rb
+#
