@@ -22,6 +22,44 @@ git config --global user.name "John Doe"
 git config --global user.email johndoe@example.com
 ```
 
+### Ajouter un template de commit
+
+Template par defaut des commit: .gitmessage.txt
+
+```bash
+Subject line (try to keep under 50 characters)
+
+Multi-line description of commit,
+feel free to be detailed.
+
+[Ticket: X]
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+# modified:   lib/test.rb
+#
+~
+~
+".git/COMMIT_EDITMSG" 14L, 297C
+```
+
+```bash
+# Config message in this repo
+git config commit.template <path to file>/.gitmessage.txt
+
+# Config message in all git projects
+git config --global commit.template <path to file>/.gitmessage.txt  
+```
+
+Si il y a le caractère ^M dans le message utiliser la commande suivante :
+
+```bash
+sed -i 's/\r//' .gitmessage.txt
+```
+
 ## Initialiser un dêpot local
 
 ```bash
@@ -31,5 +69,118 @@ git init
 ## Dupliquer un dêpot distant
 
 ```bash
-git clone <Lien vers le repo>
+git clone <link to repo>
+```
+
+## Tag 
+
+Correspond à la verion du code, il correspond à l'etat du code lors de la mises en production de la version correspondante au tag 
+
+### Lister les tags
+
+```bash
+git tag
+```
+
+### Créer un tag
+
+```bash
+git tag <tagname>
+```
+
+**tagname** version dans lequel le code va être publier (ex: version = 0.0.1 -> tag = 0.0.1) 
+
+
+### Publier un tag vers un dépôt distant
+
+```bash
+git push origin <tagname>
+```
+
+### Supprimer un tag
+
+```bash
+git tag -d <tagname>
+```
+
+
+## Branche 
+
+### Nomenclature des branches
+
+```bash
+<name>/<Ref> - <short description>
+```
+
+**name** type de branche correspondant a git flow
+- **master**
+- **develop**
+- **release** 
+- **hotfix** 
+- **feature** 
+- ... 
+
+**Ref** numéro de ticket definissant à la fonctionnalité correspondante
+
+```<code pojet = ST ><id ticket> (ex: ST0000)```
+
+**short description** déscription rapide de la fonctionnalité
+
+
+### Visualiser les branches 
+
+```bash
+git branch
+```
+
+### Supprimer une branche
+
+```bash
+git branch -d <branch name>
+```
+
+## Commits 
+
+### Nomenclature des commits 
+
+```bash
+<type>(<portée>): <sujet>
+
+<description>
+
+<footer>
+```
+
+- **Type** définit le type de commit
+  - **build**: Système de build (example : gulp, webpack, npm)
+  - **ci**: Intégration continue (example scopes: Travis, Circle, BrowserStack, SauceLabs)
+  - **docs**: Documentation
+  - **feat**: Ajout d'une fonctionnalité
+  - **fix**: Correction de bogue
+  - **perf**: Amélioration des performances
+  - **refactor**: Changement du code qui ne change rien au fonctionnement
+  - **style**: Changement du style du code (sans changer la logique)
+  - **test**: Modification des tests
+
+- **Portée** définit quelle partie de votre librairie / application est affectée par le commit (cette information est optionnelle)
+
+- **Sujet** contient une description succinte des changements
+En utilisant l'impératif présent ("change", et non pas "changed" ou "changes")
+Sans majuscule au début
+Pas de "." à la fin de la description
+
+- **Description** permet de détailler plus en profondeur les motivations derrière le changement. Les règles sont les mêmes que pour la partie Sujet.
+
+- **Footer** contient les changements importants (Breaking Changes) et les références à des issues GitHub / GitLab ou autre.
+
+Exemple: 
+
+```bash 
+fix(api): prevent racing of requests
+
+Introduce a request id and a reference to latest request. Dismiss
+incoming responses other than from latest request.
+
+Remove timeouts which were used to mitigate the racing issue but are
+obsolete now.
 ```

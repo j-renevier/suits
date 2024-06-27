@@ -1,14 +1,25 @@
-# Versionning
+# STANDART
 
-## Workflow Git
+## Tu as besoin d'aide pour résoudre ton problème
+
+
+
+
+## Versionning
+
+Demander l'autorisation pour merge sur une branche protegé
+- Dans gitlab : Merge Request (MR) 
+- Dans github : Pull Requests (PR) 
+
+### Workflow Git
 
 Un workflow Git est une recette ou une recommandation expliquant comment utiliser Git pour accomplir une tâche de façon cohérente et productive. Les workflows Git encouragent les développeurs et les équipes DevOps à exploiter Git de façon efficace et cohérente.
 
-## Pourquoi Gitflow
+### Pourquoi Gitflow
 
 Gitflow permet un développement en équipe tout en limitant les conflits. Chacun a la possibilité de travailler dans son coin pour développer des features et de les merger à n’importe quel moment dans le projet. C’est la manière d’organiser Git la plus utilisée, grâce à ses branches qui sont très efficaces, mais aussi à sa manière de gérer l’historique du code.
 
-### Initialiation de git flow
+#### Initialiation de git flow
 
 ```bash 
 git flow init
@@ -30,7 +41,7 @@ Version tag prefix? [] # Cliquer sur entrée
 Hooks and filters directory? [C:/Users/rapha/project/.git/hooks] # Cliquer sur entrée
 ```
 
-## Les différentes branches 
+### Les différentes branches 
 
 ![Branches git flow](../../asset/media/gitflow.svg)
 
@@ -41,9 +52,48 @@ Hooks and filters directory? [C:/Users/rapha/project/.git/hooks] # Cliquer sur e
 - Je doit effectuer des correction sur master -> Je créer une branche hotfix basé sur master
 - La branche hotfix est conforme -> Je merge hotfix dans master et develop
 
-## Les commits 
+#### Nomenclature des branches
 
-## Les commits 
+```bash
+<name>/<Ref> - <short description>
+```
+
+**name** type de branche correspondant a git flow
+- **master**
+- **develop**
+- **release** 
+- **hotfix** 
+- **feature** 
+- ... 
+
+**Ref** numéro de ticket definissant à la fonctionnalitée correspondante
+
+```<code pojet = ST ><id ticket> (ex: ST0000)```
+
+**short description** déscription
+
+
+### Les commits 
+
+#### Pourquoi commit ?
+
+##### Tu travail seul sur ta branche
+
+1. Tu a finis t'as fonctionnaitées pour faire une merge request dans develop 
+2. Tu veux integrer d'autres braches (local ou distante)
+3. Tu veux mettre a jours ta branche distante pour assurer une backup de ton code
+4. Tu veux changer de branche sans perdre tes modifications et tu sais pas utiliser git stash
+
+Le reste du temps ton code est enregistré sur ton ordinateur, sauf si tu brûle ton PC il lui arrivera rien. 
+Plus tu as de commits, plus tu te ferra chier lorsqu'il faudra rebase tes conflits. 
+
+##### Tu travail à plusieurs sur ta branche
+
+1. Pull / Push réguliérement
+2. Communique avec les autres développeurs pour que vous soyez en phase 
+3. Fuit 
+
+#### Nomenclature des commits 
 
 ```bash
 <type>(<portée>): <sujet>
@@ -53,7 +103,7 @@ Hooks and filters directory? [C:/Users/rapha/project/.git/hooks] # Cliquer sur e
 <footer>
 ```
 
-- Type définit le type de commit
+- **Type** définit le type de commit
   - **build**: Système de build (example : gulp, webpack, npm)
   - **ci**: Intégration continue (example scopes: Travis, Circle, BrowserStack, SauceLabs)
   - **docs**: Documentation
@@ -64,16 +114,16 @@ Hooks and filters directory? [C:/Users/rapha/project/.git/hooks] # Cliquer sur e
   - **style**: Changement du style du code (sans changer la logique)
   - **test**: Modification des tests
 
-- Portée définit quelle partie de votre librairie / application est affectée par le commit (cette information est optionnelle)
+- **Portée** définit quelle partie de votre librairie / application est affectée par le commit (cette information est optionnelle)
 
-- Sujet contient une description succinte des changements
+- **Sujet** contient une description succinte des changements
 En utilisant l'impératif présent ("change", et non pas "changed" ou "changes")
 Sans majuscule au début
 Pas de "." à la fin de la description
 
-- Description permet de détailler plus en profondeur les motivations derrière le changement. Les règles sont les mêmes que pour la partie Sujet.
+- **Description** permet de détailler plus en profondeur les motivations derrière le changement. Les règles sont les mêmes que pour la partie Sujet.
 
-- Footer contient les changements importants (Breaking Changes) et les références à des issues GitHub / GitLab ou autre.
+- **Footer** contient les changements importants (Breaking Changes) et les références à des issues GitHub / GitLab ou autre.
 
 Exemple: 
 
@@ -87,6 +137,7 @@ Remove timeouts which were used to mitigate the racing issue but are
 obsolete now.
 ```
 
+### Feature 
 
 #### Création d'une branche de fonctionnalité
 
@@ -95,6 +146,7 @@ git flow feature start <feature_branch>
 ```
 
 #### Publier une fonctionnalité
+
 ```bash 
 git flow feature publish <feature_branch>
 ```
