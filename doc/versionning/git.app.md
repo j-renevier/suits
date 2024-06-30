@@ -184,3 +184,79 @@ incoming responses other than from latest request.
 Remove timeouts which were used to mitigate the racing issue but are
 obsolete now.
 ```
+
+## Cherry Pick
+
+git-cherry-pick - Applique les modifications introduites par certains commits existants
+
+```bash
+git cherry-pick [--edit] [-n] [-m <numéro-de-parent>] [-s] [-x] [--ff] [-S[<id-clé>]] <commit>…​
+
+git cherry-pick (--continue | --skip | --abort | --quit)
+```
+
+### Exemple
+
+Passer le dernier commit de <start-branch> à <end-branch>
+
+```bash
+git checkout <end-branch>
+
+git cherry-pick <start-branch>
+```
+
+## Clean dêpot local
+
+⚠️ Les modifications faites en locales sont a jour sur le dêpot distant, si tu veux pas push ta branche n'utlise pas cette commande sinon bye bye. 
+
+Récupérez toutes les branches et les informations de suivi du dépôt distant
+
+```bash
+git fetch --prune
+```
+
+Supprimez les branches locales qui ne sont pas présentes sur le dépôt distant
+
+```bash
+git branch -vv | grep ': gone]' | awk '{print $1}' | xargs -r git branch -d
+```
+
+## Stash
+
+Git stash stocke (ou stashe) temporairement les changements apportés à votre copie de travail pour que vous puissiez effectuer d'autres tâches, puis revenir et les réappliquer par la suite.
+
+
+### Faire un stash de votre travail
+
+```bash
+git stash
+```
+Ajouter un message au stash
+
+```bash
+git stash save "message"
+```
+
+### Appliquer les changements stashés
+
+```bash
+git stash pop
+```
+
+### Afficher tous les stashes enregistrés
+
+```bash
+git stash list
+```
+
+### Nettoyez votre stash
+
+```bash
+git stash drop
+```
+
+Supprimer tous les stashes 
+
+```bash
+git stash clear
+```

@@ -7,6 +7,10 @@
 
 ## Versionning
 
+⚠️ Tu as pousser de la merde sur develop (ou autre), Tu nettoie ta merde 
+🚫🚫🚫 PAS DE GIT REVERSE 🚫🚫🚫
+💠Rebase régulièrement develop 
+
 Demander l'autorisation pour merge sur une branche protegé
 - Dans gitlab : Merge Request (MR) 
 - Dans github : Pull Requests (PR) 
@@ -91,7 +95,7 @@ Plus tu as de commits, plus tu te ferra chier lorsqu'il faudra rebase tes confli
 
 1. Pull / Push réguliérement
 2. Communique avec les autres développeurs pour que vous soyez en phase 
-3. Fuit 
+3. Fuis 
 
 #### Nomenclature des commits 
 
@@ -161,7 +165,82 @@ git pull
 
 ## Git push
 
-/ ! \  Ne Jamais push directement sur develop, passer par un pull request via github
 ```bash 
-git push <remote> <branch>
-```~
+git flow feature publish
+```
+
+### Ajouter une feature dans develop 
+
+🚫🚫🚫 PAS DE GIT MERGE DANS DEVELOP SANS PASSER PAR UNE MR 🚫🚫🚫
+
+#### S'assurer qu'il n'y a pas de conflit entre la branche de feature et la branche develop
+
+```bash 
+git checkout develop
+
+git pull develop 
+
+git chekout feature/<XX0-my_feature>
+
+git rebase develop 
+
+git push
+
+# If error
+git push -f # BE SURE OF YOUR NEW CHANGE
+```
+La branche de feature est à jour
+
+#### Ouvrir une merge request 
+
+##### Template
+
+- Titre: 
+  - <Ref> <description fonctionalité> (ex: GF-001 Créer un structure html)
+- Description: 
+  - Lien vers la definition de la fonctionalité dans le backlog (ticket jira)
+  - Lien vers le rendu de la focntionalité dans le suivie de qualité
+  - Spécification particulière (ex: modification de la base de donné, relancer les migrations)
+  - Spécification pour tester la focntionalité 
+- Ajouter le projet correspondant
+- S'assigner sur la MR 
+- Ajouter un milestone correspondant à la verion du code dans develop
+
+##### Communiquer
+
+Faire un message pour annoncer qu'une nouvelle MR à été ouverte et qu'il faut la tester
+Passer un coup de geule si personne ne test la MR
+
+#### Tester une merge request 
+
+C'est la responsabilité de chaque developeur de tester toutes les MRs
+
+- [fonctionel] La fonctionnalité marche correctement
+- [fonctionel] Pas de régression
+- [code] Tout les tests passe 
+- [code] le nouveau code est bien testé 
+- [code] le style du code est bien respecter (escalier, indentation, nomenclature)
+- [code] Pas de console.log ou équivalent
+- [code] Pas de code mort
+- [code] Pas de commentaires inutils 
+- [code] Logique du code
+
+
+##### Le code est conforme au standars 
+
+Ajouter un 👍 sur la mr pour la valider 
+
+##### Le code n'est pas conforme au standars 
+
+Ajouter des commentaires 
+
+#### Corriger les retours 
+
+Passer la MR en draft (convert to draft)
+Soliciter les developeurs pour qu'ils reverifient les corrections
+
+#### La MR est valider
+
+Verifier que la branch de feature et toujours à jour sur develop, sinon rebase
+
+**Merge la merge request** 

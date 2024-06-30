@@ -103,6 +103,5 @@ Hooks and filters directory? [C:/Users/rapha/project/.git/hooks] # Cliquer sur e
 |git flow | feature | start   | <branch-name>|      |
 |         | release | finish  |              |      |
 |         | hotfix  | publish |              |      |
-|         |         | pull    |              |      |
-
+|         |         | pull    |              |     
 ### Créer un branch 
