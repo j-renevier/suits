@@ -90,16 +90,6 @@ git clone git@github.com:j-renevier/suits.git
 git clone https://github.com/j-renevier/suits.git
 ```
 
-# Variables d'envrionnement générales
-
-```bash 
-# Value: development | test | build | production
-ENV = development
-DOMAINE_NAME = ChangeMe
-EXTENSION = .ChangeMe
-HOST = ChangeMe
-```
-
 # Rachel - Suits Interface
 
 <h2 id="clone-rachel">Dupliquer le dépôt</h2>
@@ -360,34 +350,18 @@ docker compose up --build
 <h3 id="ssh-donna">SSH</h3>
 
 ```bash
-git clone 
+git clone git@github.com:j-renevier/donna.git
 ```
 
 <h3 id="http-donna">HTTP</h3>
 
 ```bash
-git clone 
+git clone https://github.com/j-renevier/donna.git
 ```
 
 <h2 id="env-donna">Variables d'environnement</h2>
 
-```bash 
-# .env
-ENV = development
-DOMAINE_NAME = ChangeMe
-EXTENSION = .ChangeMe
-HOST = localhost
-
-
-# CHANGE ENV VAR 
-DB_CONTAINER_NAME = mariadb
-MYSQL_ROOT_PASSWORD = ChangeMe
-MYSQL_USER = j.renevier
-MYSQL_PASSWORD = ChangeMe
-MYSQL_PORT = 3307
-
-PHPMYADMIN_PORT = 83
-```
+Configurer les variables d'environnement dans le .env
 
 <h2 id="docker-donna">Docker</h2>
 

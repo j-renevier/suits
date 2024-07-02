@@ -3,8 +3,6 @@
 ## Tu as besoin d'aide pour résoudre ton problème
 
 
-
-
 ## Versionning
 
 ⚠️ Tu as pousser de la merde sur develop (ou autre), Tu nettoie ta merde 

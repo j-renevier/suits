@@ -28,6 +28,15 @@ Dépôt principal du projet Suits - Travail collaboratif pour améliorer les com
     <li><a href="#description">Description</a></li>
     <li><a href="#github">Github</a></li>
     <li>
+      <a href="#par-où-commencer">Par où commencer</a>
+      <ul>
+        <li><a href="#documentation">Documentation</a></li>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#processus">Processus</a></li>
+        <li><a href="#versions">Versions</a></li>
+      </ul>
+    </li>
+    <li>
       <a href="#structure">Structure</a>
       <ul>
         <li><a href="#schéma-de-lapplication">Schéma de l'application</a></li>
@@ -38,25 +47,10 @@ Dépôt principal du projet Suits - Travail collaboratif pour améliorer les com
       </ul>
     </li>
     <li>
-      <a href="#documentation">Documentation</a>
-      <ul>
-        <li>
-          <a href="#processus">Processus</a>
-          <ul>
-            <li><a href="#processus-de-développement">Processus de développement</a></li>
-            <li><a href="#processus-de-livraison">Processus de livraison</a></li>
-          </ul>
-         </li>
-        </li>
-        <li><a href="#version">Version</a></li>
-      </ul>
-    </li>
-    <li>
       <a href="#getting-started">Démarrage</a>
       <ul>
         <li><a href="#prérequis">Prérequis</a></li>
         <li><a href="#exigences">Exigences</a></li>
-        <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
     <li>
@@ -81,6 +75,54 @@ Mettre en relation des entreprises avec des personnes à la recherche de nouvell
 ## Github 
 
 ![Github](./asset/media/github-organisation-light.svg)
+
+
+<p align="right"><a  href="#Suits">⬆️</a></p>
+
+## Par où commencer
+
+
+Par où commencer
+1. Readme
+
+3. Pour installer le projet 
+  - Pour installer le projet : Suits/doc/instalation
+  - Ce connecter au manager de base de donnée pgadmin : Suits/doc/donna/index.md
+
+2. Contribuer au projet
+  - Lire  les stadards BASIC : Lire  les stadards BASIC    
+  - Lire  les stadards gestion de projet : Suits/doc/standard/projectManagement.standard.md PAS FINI
+    - developper un fonctionalité Lire  les stadards development : Suits/doc/standard/development.standard.md PAS FINI
+    - corriger un bug Lire  les stadards issues : Suits/doc/standard/issue.standard.md PAS FINI
+    - comprendre le management des versions : Suits/doc/version.standard.md
+  - Outils de versioning du projet 
+    - git : Suits/doc/versionning/git.app.md Commandes de bases, pas fini
+    - gitflow : Suits/doc/versionning/gitflow.app.md  Commandes de bases, pas fini
+      - S’entrainner à utiliser gitflow : Suits/doc/versionning/gitflow.project.md si tu n’utilise pas gitflow régulièrement fait le 
+
+
+  
+### Documentation
+
+- Norme projet (.standard) : Définiton des normes du projet et commandes de base
+- Application (.app) : Documentation et ressources pour l'application
+- Projet (.project) : Exercice de démarrage, à compléter avant de commencer si tu n'est pas familier avec cette technologie
+
+
+### Installation
+
+- [Guide d'installation](https://github.com/j-renevier/Suits/blob/master/doc/instalation.md "Documentation")
+
+- [Guide d'installation - Github](https://github.com/j-renevier/Suits/blob/master/doc/instalation.md "Documentation")
+
+### Processus
+
+- [Processus de développement](./doc/standard/development.standard.md)
+- [Processus de correction d'issue](./doc/standard/issue.standard.md)
+
+### Version
+
+- [Processus de gestion de projet - gestion des versions](./doc/standard/projectManagement.standard.md/#gestion-des-versions)
 
 
 <p align="right"><a  href="#Suits">⬆️</a></p>
@@ -153,30 +195,11 @@ Mettre en relation des entreprises avec des personnes à la recherche de nouvell
 
 <p align="right"><a  href="#Suits">⬆️</a></p>
 
-## Documentation
-
-- Norme projet (.standard) : Définiton des normes du projet et commandes de base
-- Application (.app) : Documentation et ressources pour l'application
-- Projet (.project) : Exercice de démarrage, à compléter avant de commencer si tu n'est pas familier avec cette technologie
-
-### Processus
-
-- [Processus de développement](./doc/standard/development.standard.md)
-- [Processus de correction d'issue](./doc/standard/issue.standard.md)
-
-<p align="right"><a  href="#Suits">⬆️</a></p>
-
-### Version
-
-- [Processus de gestion de projet - gestion des versions](./doc/standard/projectManagement.standard.md/#gestion-des-versions)
-
-<p align="right"><a  href="#Suits">⬆️</a></p>
-
 ## Démarrage
 
 ### Prérequis
 
-- Lire une documentation
+- Savoir lire une documentation
 
 ### Exigences
 
@@ -185,16 +208,6 @@ Mettre en relation des entreprises avec des personnes à la recherche de nouvell
   - Node
 - Compétences transverses 
   - Avoir assez de courrage pour lire la doc avant de commencer
-
-<p align="right"><a  href="#Suits">⬆️</a></p>
-
-### Installation
-
-Guide d'installation
-
-- [Guide d'installation](https://github.com/j-renevier/Suits/blob/master/doc/instalation.md "Documentation")
-
-- [Guide d'installation - Github](https://github.com/j-renevier/Suits/blob/master/doc/instalation.md "Documentation")
 
 <p align="right"><a  href="#Suits">⬆️</a></p>
 
@@ -269,14 +282,16 @@ Guide d'installation
 
 ## Contributeurs
 
-<div style="display: flex; justify-content:center; align-items:centr; gap:20px">
-   <div style="display: flex; justify-content:center; align-items:centr; flex-direction:column; width:auto; background:#2b2b2b; border-radius:5px; padding: 20px">
+<div style="display: flex; justify-content:center; align-items:center; gap:20px">
+
+  <div style="display: flex; justify-content:center; align-items:center; flex-direction:column; width:auto; background:#2b2b2b; border-radius:5px; padding: 20px">
     <p align="center">
       <img src="./asset/media/j-renevier.jpg" alt="email" width="75" height="75" style="border-radius:9999px; padding: 5px">
     </p>
     <p style="display: flex; justify-content:center; align-items:center; gap: 5px">
       <img src="./asset/media/user.svg" alt="email" width="15" height="15">
-      <b>Joachim Renevier</b></p>
+      <b>Joachim Renevier</b>
+    </p>
     <p style="display: flex; justify-content:center; align-items:center; gap: 5px">
       <img src="./asset/media/email.svg" alt="email" width="15" height="15">
       <a href="mailto:joachim.renevier@gmail.com">joachim.renevier@gmail.com</a>
@@ -287,13 +302,14 @@ Guide d'installation
     </p>
   </div>
 
-  <div style="display: flex; justify-content:center; align-items:centr; flex-direction:column; width:auto; background:#2b2b2b; border-radius:5px; padding: 20px">
+  <div style="display: flex; justify-content:center; align-items:center; flex-direction:column; width:auto; background:#2b2b2b; border-radius:5px; padding: 20px">
     <p align="center">
       <img src="https://avatar.iran.liara.run/public/job/astronomer/female" alt="email" width="75" height="75" style="border-radius:9999px; padding: 5px">
     </p>
     <p style="display: flex; justify-content:center; align-items:center; gap: 5px">
       <img src="./asset/media/user.svg" alt="email" width="15" height="15">
-      <b>John Doe</b></p>
+      <b>John Doe</b>
+    </p>
     <p style="display: flex; justify-content:center; align-items:center; gap: 5px">
       <img src="./asset/media/email.svg" alt="email" width="15" height="15">
       <a href="mailto:john.doe@gmail.com">john.doe@gmail.com</a>
@@ -303,6 +319,7 @@ Guide d'installation
       <a href="https://github.com/john.doe" title="Mon github">john.doe</a>
     </p>
   </div>
+  
 </div>
 
 
